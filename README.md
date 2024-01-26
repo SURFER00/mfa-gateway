@@ -12,6 +12,25 @@ It is recommended to have a working reverse-proxy with https support.
 - Support for trusting reverse proxy headers (e.g., `X-Forwarded-For`).
 - Customizable notification templates based on the username.
 
+
+## Examples
+
+### SSH multi-factor authentication
+I included a shell script that can be hooked into pam authentication to secure ssh with push based multi-factor authentication
+
+Save the script from `examples/request-mfa.sh` to `/bin/request-mfa` and configure the values.
+Make sure to set secure file permissions for the file to make sure the script can't be used for privilege escalation of some sort:
+```
+chown root:root /bin/request-mfa&&chmod 555 /bin/request-mfa
+```
+
+And finally just add this line to the bottom of `/etc/pam.d/sshd`:
+```
+session   required   pam_exec.so /bin/request-mfa
+```
+
+Now as soon as you try to login using ssh, you get a notification using your notification provider to approve the login
+
 ## Installation
 
 ### Manual installation
@@ -74,22 +93,3 @@ docker-compose up -d
   }
 }
 ```
-
-
-## Examples
-
-### SSH multi-factor authentication
-I included a shell script that can be hooked into pam authentication to secure ssh with push based multi-factor authentication
-
-Save the script from `examples/request-mfa.sh` to `/bin/request-mfa` and configure the values.
-Make sure to set secure file permissions for the file to make sure the script can't be used for privilege escalation of some sort:
-```
-chown root:root /bin/request-mfa&&chmod 555 /bin/request-mfa
-```
-
-And finally just add this line to the bottom of `/etc/pam.d/sshd`:
-```
-session   required   pam_exec.so /bin/request-mfa
-```
-
-Now as soon as you try to login using ssh, you get a notification using your notification provider to approve the login
