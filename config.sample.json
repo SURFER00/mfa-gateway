@@ -1,0 +1,28 @@
+{
+  "Authentication": {
+    "trusted_servers": {
+      "ssh_server_1": "your_api_token_1",
+      "ssh_server_2": "your_api_token_2"
+    },
+    "trusted_ip_networks": [],
+    "trusted_reverse_proxies": [],
+    "max_failed_attempts": 3,
+    "block_duration": 60,
+    "auth_timeout": 30
+  },
+  "Server": {
+    "listen_addr": "0.0.0.0",
+    "listen_port": 5000,
+    "host_addr": "https://mfa.example.org"
+  },
+  "user_settings": {
+    "default": {
+      "notification_message": "SSH login request from {server_name} ({client_ip})",
+      "push_link": "https://your-push-provider/sendNotification?message={notification_message}"
+    },
+    "user1": {
+      "notification_message": "Hello {username}! You have a login request from {server_name} ({client_ip})",
+      "push_link": "https://your-push-provider/sendNotification?message={notification_message}"
+    }
+  }
+}

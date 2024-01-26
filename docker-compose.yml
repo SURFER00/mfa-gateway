@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  mfa-gateway:
+    build: .
+    container_name: mfa-gateway
+    restart: always
+    volumes:
+      - ./config.json:/app/config.json:ro
+    ports:
+      - 5000:5000
