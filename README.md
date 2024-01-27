@@ -1,7 +1,7 @@
 # Python MFA Gateway
 A lightweight server for multifactor authentication
 
-This project is a simple implementation of a Multi-Factor Authentication (MFA) gateway. The MFA gateway sends push notifications for SSH login requests and provides a mechanism for users to confirm their login.
+This project is a simple implementation of a Multi-Factor Authentication (MFA) gateway. The MFA gateway sends push notifications for login requests and provides a mechanism for users to confirm their login.
 
 It is recommended to have a working reverse-proxy with https support.
 
