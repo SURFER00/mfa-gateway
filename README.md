@@ -63,7 +63,7 @@ docker-compose up -d
   "ssh_server_1": "your_api_token_1",
   "ssh_server_2": "your_api_token_2"
 },
-// Enter this network ranges in which you want to bypass, for example ["192.168.1.0/24", "10.0.0.0/8"]
+// Enter the network ranges in which you want to bypass authentication, for example ["192.168.1.0/24", "10.0.0.0/8"]
 "trusted_ip_networks": [],
 // Enter the ip addresses of your reverse proxies, for example ["10.1.1.10", "10.1.1.11"]
 "trusted_reverse_proxies": [],
