@@ -52,7 +52,7 @@ cd mfa-gateway&&python ./server.py
 ```
 git clone https://github.com/Surferr0815/mfa-gateway.git mfa-gateway
 cp config.sample.json config.json
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Configuration
