@@ -36,7 +36,7 @@ Now as soon as you try to login using ssh, you get a notification using your not
 ### Manual installation
 
 ```
-git clone https://github.com/Surferr0815/mfa-gateway.git mfa-gateway
+git clone https://github.com/SURFER00/mfa-gateway.git mfa-gateway
 pip install -r mfa-gateway/requirements.txt
 ```
 
@@ -50,7 +50,7 @@ cd mfa-gateway&&python ./server.py
 
 
 ```
-git clone https://github.com/Surferr0815/mfa-gateway.git mfa-gateway
+git clone https://github.com/SURFER00/mfa-gateway.git mfa-gateway
 cp config.sample.json config.json
 docker compose up -d
 ```
