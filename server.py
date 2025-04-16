@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from waitress import serve
-import ipaddress, json, logging, requests, secrets, time
+import ipaddress, json, logging, requests, secrets, signal, sys, time
 
 app = Flask(__name__)
 
@@ -209,6 +209,13 @@ def check_mfa_authentication():
 
 
 if __name__ == '__main__':
+    def handle_exit(signum, frame):
+        print("\nReceived exit signal. Exiting...")
+        sys.exit(0)
+        
+    signal.signal(signal.SIGINT, handle_exit)
+    signal.signal(signal.SIGTERM, handle_exit)
+
     # For debugging purposes
     # app.run(debug=True, host=LISTEN_ADDR, port=LISTEN_PORT)
     # For debugging, comment out the code below
