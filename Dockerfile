@@ -1,4 +1,4 @@
-from alpine:3.22.1
+from alpine:3.22.2
 WORKDIR ./
 RUN mkdir -p /app/config
 RUN apk add python3 py3-flask py3-requests py3-waitress
